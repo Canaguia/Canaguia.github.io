@@ -1,0 +1,166 @@
+<!DOCTYPE HTML>
+<!--
+    Case Study Template
+    Using: Read Only by HTML5 UP
+    html5up.net | @ajlkn
+-->
+<html>
+<head>
+    
+    <title>Case Study - Project Name</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet">
+</head>
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="post">
+
+        <!-- Main -->
+
+            <article class="container">
+
+                <div class="video-banner" data-position="center">
+                    <video autoplay muted loop id="header-video">
+                        <source src="images/header_video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                
+                <!-- Title Section -->
+                <header class="major">
+                    <h2>The Garden: Postmortem</h2>
+                    <p>Adventures in the Animation Pipeline</p>
+                </header>
+
+                <!-- Introduction -->
+                <section>
+                    <p>
+                        I had the tremendous privelage to be able to work with the kind and talented people at <a href="https://arl.cs.washington.edu/index.html">ARL Animation Research Labs</a> where I got to
+                        experience working in an animation production pipeline environment alongside an interdisciplinary group of students from several different fields! <br><br>
+
+                        I got to work with a team of of 17 dedicated students and teaching assistants for over a year on two major animated film projects.
+                        This post is to reflect on my year long exeperience with ARL working on two short-films and multiple side projects and the lessons learned, the challenges faced and how they were overcome.
+                    </p>
+                </section>
+
+                <!-- Section 1: Ideation & Planning -->
+                <section>
+                    <h2>Planning</h2>
+                    <p>
+                        Before development on the year long film a pilot film with a smaller team was done. This shortfilm was done over a much smaller timeframe with 6 others.
+                        The core of this project was creating a character known as "Greed".
+
+                        Key points at this stage was gathering reference and rapid storyboarding.
+
+                    </p>
+                    <img src="images/concept_art.jpg" alt="Concept Art" class="image fit">
+                </section>
+
+                <!-- Section 2: Development Process -->
+                <section>
+                    <h2>2. Development & Implementation</h2>
+                    <p>
+                        As rigging and scripting lead my contributions were:
+                        - Understanding the exsiting capstone auto-rigging shelves built in Maya and Python
+                        - Creating files to apply auto-rigging to humanoid and non-humanoid models
+                        - Adding to the existing capstone toolset via a neat little script to help animators copy skin-weights within maya to models with the same geometry (was useful as many characters had several duplicated leaf-geometries)
+                        
+                        <blockquote>
+                            <pre><code class="language-python">
+def copy_skin_weights():
+    # Get all selected objects with the specific suffix "_source"
+    selection = cmds.ls(sl=True, long=True)
+    selection_names = [name.split('|')[-1] for name in selection]
+    print(selection_names)
+    source_objects = [obj for obj in selection_names if obj.endswith('_source')]
+    
+    for source_obj in source_objects:
+        target_obj = source_obj.replace('_source', '')
+        
+        if cmds.objExists(target_obj):
+            cmds.select([source_obj, target_obj])
+            cmds.CopySkinWeights()
+        else:
+            print("Target object '{}' not found.".format(target_obj))
+
+copy_skin_weights()
+                            </code></pre>
+                        </blockquote>
+
+                        As a modeller I was in charge of the set which was a large undertaking. This process required me to
+                    </p>
+                    <img src="images/development_screenshot.jpg" alt="Development Screenshot" class="image fit">
+                </section>
+
+
+
+                <!-- Section 3: Challenges & Solutions -->
+                <section>
+                    <h2>3. Challenges & Solutions</h2>
+                    <p>
+                        One of the major challenges was optimizing performance for real-time rendering. To overcome this:
+                    </p>
+                    <blockquote>
+                        "I used LOD (Level of Detail) models and texture baking to reduce draw calls, improving FPS by 30%."
+                    </blockquote>
+                    <img src="images/optimization.jpg" alt="Optimization Process" class="image fit">
+                </section>
+
+                <!-- Conclusion -->
+                <section>
+                    <h2>Conclusion & Results</h2>
+                    <p>
+                        What i learnt.
+                    </p>
+                    <video controls class="video fit">
+                        <source src="videos/final_demo.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </section>
+
+                <section>
+                    <h2>Side Projects</h2>
+                    <p>
+                        I worked on a  cool self portrait project
+                    </p>
+                    <blockquote>
+                        "I used LOD (Level of Detail) models and texture baking to reduce draw calls, improving FPS by 30%."
+                    </blockquote>
+                    <img src="images/optimization.jpg" alt="Optimization Process" class="image fit">
+                </section>
+
+                <!-- Call to Action -->
+                <footer>
+                    <p>The film is still doing festival runs and therefore cannot be publicly displayed but when it can I will have it here!</p>
+                    <ul class="actions special">
+                        <li><a href="https://github.com/yourrepo" class="button">View on GitHub</a></li>
+                    </ul>
+                </footer>
+
+            </article>
+
+
+        <!-- Footer -->
+        <footer id="footer">
+            <p>© 2025 Filip Karlsson. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+
+
+</body>
+</html>

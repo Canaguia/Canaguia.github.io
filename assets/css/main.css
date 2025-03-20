@@ -200,25 +200,26 @@ input, select, textarea {
 		padding: 0.5em 0 0.5em 2em;
 	}
 
-	code {
+	code[class*="language-"] {
 		background: #555;
 		border-radius: 5px;
 		color: #fff;
 		font-family: "Source Code Pro", monospace;
-		font-size: 0.9em;
+		font-size: 0.8em !important;
 		margin: 0 0.25em;
 		padding: 0.25em 0.65em;
 	}
 
-	pre {
+	pre[class*="language-"] {
 		font-family: "Source Code Pro", monospace;
-		font-size: 0.9em;
+		font-size: 0.8em;
 		margin: 0 0 2.25em 0;
 	}
 
 		pre code {
 			-webkit-overflow-scrolling: touch;
 			display: block;
+			font-size: 0.8em;
 			line-height: 1.5em;
 			overflow-x: auto;
 			padding: 1em 1.5em;
@@ -1704,6 +1705,7 @@ input, select, textarea {
 
 		}
 
+
 /* Container */
 
 	.container {
@@ -3025,14 +3027,15 @@ input, select, textarea {
 				-webkit-transition: -webkit-transform 0.5s ease;
 				-ms-transition: -ms-transform 0.5s ease;
 				transition: transform 0.5s ease;
-				padding: 44px 0 1px 0;
+				padding: 0 0 1px 0;
 				/*padding-left: 23em;*/
 			}
 
 		/* Header Panel */
 
 			#titleBar {
-				-moz-backface-visibility: hidden;
+				display: none;
+				/* -moz-backface-visibility: hidden;
 				-webkit-backface-visibility: hidden;
 				-ms-backface-visibility: hidden;
 				backface-visibility: hidden;
@@ -3049,7 +3052,7 @@ input, select, textarea {
 				z-index: 10001;
 				background: #222;
 				color: #fff;
-				min-width: 320px;
+				min-width: 320px; */
 			}
 
 				#titleBar .title {
@@ -3073,7 +3076,7 @@ input, select, textarea {
 					height: 4em;
 					position: absolute;
 					top: 0;
-					width: 6em;
+					width: 0em;
 					border: 0;
 					outline: 0;
 					right: 0;
@@ -3103,7 +3106,7 @@ input, select, textarea {
 						position: absolute;
 						text-align: center;
 						top: 0;
-						width: 64px;
+						width: 0px;
 						right: 0;
 					}
 
@@ -3195,15 +3198,15 @@ input, select, textarea {
 
 			#header {
 				width: 17em;
-				-moz-transform: translateX(17em);
-				-webkit-transform: translateX(17em);
-				-ms-transform: translateX(17em);
-				transform: translateX(17em);
+				-moz-transform: translateX(-17em);
+				-webkit-transform: translateX(-17em);
+				-ms-transform: translateX(-17em);
+				transform: translateX(-17em);
 				right: 0;
 			}
 
 				#header > header {
-					padding: 2em;
+					padding: em;
 				}
 
 					#header > header .avatar {
@@ -3248,23 +3251,19 @@ input, select, textarea {
 					}
 
 		/* Header Panel */
-
+	    #titleBar {
+			display: none;
+			width: 0px;
+		}
 			#titleBar .toggle {
-				height: 4em;
-				width: 6em;
+				display: none;
 			}
 
 				#titleBar .toggle:before {
+					display: none;
 					font-size: 14px;
-					width: 44px;
+					width: 0px;
 				}
-
-			body.header-visible #wrapper, body.header-visible #titleBar {
-				-moz-transform: translateX(-17em);
-				-webkit-transform: translateX(-17em);
-				-ms-transform: translateX(-17em);
-				transform: translateX(-17em);
-			}
 
 	}
 
@@ -3272,6 +3271,10 @@ input, select, textarea {
 
 	@media screen and (max-width: 480px) {
 
+				/* Header Panel */
+		#titleBar {
+			display: none;
+		}
 		/* Basic */
 
 			html, body {
