@@ -1,123 +1,134 @@
 <!DOCTYPE HTML>
-<!--
-    Case Study Template
-    Using: Read Only by HTML5 UP
-    html5up.net | @ajlkn
--->
 <html>
 <head>
-    <title>Case Study - Project Name</title>
+    <title>Case Study - VR Fire Safety Simulation</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/blog.css">
 </head>
 <body class="is-preload">
-
-    <!-- Wrapper -->
     <div id="post">
+        <article class="container">
 
-        <!-- Main -->
+            <div class="video-banner" data-position="center">
+                <video autoplay muted loop id="header-video">
+                    <source src="images/firesafe/PromoVideo 1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
 
-            <article class="container">
+            <header class="major">
+                <h2>Postmortem: VR Fire Safety Simulation for FireSafe</h2>
+            </header>
+            
+            <section>
+                <h2>Introduction</h2>
+                <p>Revisiting this project years after its completion has provided an opportunity to reflect on both its successes and challenges. The project, developed in cooperation with CrashCourse for FireSafe, aimed to create an immersive fire safety training simulation using VR. This postmortem highlights key design decisions, technical implementations, and lessons learned along the way.</p>
+            </section>
+            
+            <section>
+                <h2>Project Overview</h2>
+                <p>Initially scoped as a three-month sprint during the summer, the project ultimately spanned approximately nine months due to delays in obtaining permissions and design guidelines. Despite these setbacks, the project can be divided into three distinct phases:</p>
+                <ul>
+                    <li><strong>Pre-production</strong> – Establishing core systems and design choices.</li>
+                    <li><strong>Production</strong> – Sourcing assets, structuring the simulation’s flow, and implementing key mechanics.</li>
+                    <li><strong>Testing, Quality Control, and Launch</strong> – Refining interactions, improving usability, and ensuring a polished final product.</li>
+                </ul>
+            </section>
+            
+            <section>
+                <h2>Pre-production</h2>
+                <h3>Project Definition & Constraints</h3>
+                <p>At the outset, the project’s goals were unclear. As the sole developer, I focused on identifying essential components that would define the experience. One of my first steps was analyzing CrashCourse’s previous project, <em>Go Save Them VR</em>, to understand how its mechanics and design choices could inform this new simulation.</p>
+            </section>
 
-                <div class="video-banner" data-position="center">
-                    <video autoplay muted loop id="header-video">
-                        <source src="images/header_video.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                
-                <!-- Title Section -->
-                <header>
-                    <h2>Project Name: The Development Process</h2>
-                    <p>Case Study on [Game/Animation Name]</p>
-                    <span class="date">Published on March 18, 2025</span>
-                </header>
+            <section>
+                <h2>Core Systems</h2>
+                <h3>Fire Extinguisher Interaction</h3>
+                <p>The fire extinguisher was the most critical element and underwent multiple iterations to achieve a balance of realism and usability. </p>
+                <ul>
+                    <li><strong>Holding Mechanic:</strong> Implemented using Unity’s XR Toolkit, allowing realistic two-hand grip.</li>
+                    <li><strong>Pin Removal:</strong> Used a soft joint system to prevent accidental detachment.</li>
+                    <li><strong>Spray Mechanism:</strong> Leveraged Unity’s particle system, balancing performance with realism.</li>
+                </ul>
+            </section>
 
-                <!-- Introduction -->
-                <section>
-                    <p>
-                        This case study explores the development of <strong>[Project Name]</strong>, a [game/animation] created using [Unity/Blender/etc.].
-                        I’ll walk through my design choices, technical challenges, and creative process from start to finish.
-                    </p>
-                    <img src="images/project_banner.jpg" alt="Project Banner" class="image fit">
-                </section>
+            <div class="image" data-position="center">
+                <img src="images/firesafe/spray_on_floor.png" alt="Initial floor spray tests">
+                <img src="images/firesafe/spray_on_floor.png" alt="Fire extinguisher model">
+            </div>
+            
+            <section>
+                <h3>Fire System</h3>
+                <p>The simulation used <em>Ignis</em>, an asset that provided interactive fire behavior but required significant modifications to meet the training objectives.</p>
+                <ul>
+                    <li><strong>Controlled Spread:</strong> Prevented instant fire propagation by defining fire volumes.</li>
+                    <li><strong>Persistence of Fire:</strong> Adjusted extinguishing behavior to reinforce proper technique.</li>
+                    <li><strong>Player Guidance:</strong> Added visual indicators to improve learning outcomes.</li>
+                </ul>
+            </section>
 
-                <!-- Section 1: Ideation & Planning -->
-                <section>
-                    <h2>1. Concept & Planning</h2>
-                    <p>
-                        Before development began, I created a series of concept sketches and prototypes to define the project's core mechanics and artistic style.
-                    </p>
-                    <img src="images/concept_art.jpg" alt="Concept Art" class="image fit">
-                </section>
+            <div class="image" data-position="center">
+                <img src="images/firesafe/smoke-buildup.png" alt="Smoke Build-up Test Environment">
+                <img src="images/firesafe/laptop_fire.png" alt="Laptop on Fire">
+            </div>
+            
+            <section>
+                <h2>Production</h2>
+                <h3>Establishing Requirements</h3>
+                <p>Once development resumed, finalized requirements from FireSafe allowed for structured milestone planning. Features were broken down into prioritized milestones, tracked using Trello.</p>
+            </section>
 
-                <!-- Section 2: Development Process -->
-                <section>
-                    <h2>2. Development & Implementation</h2>
-                    <p>
-                        Using <strong>[Tools Used]</strong>, I programmed key mechanics such as [e.g., AI behavior, physics, animation systems].
-                        Below is a breakdown of the technical implementation.
-                    </p>
-                    <ul>
-                        <li>🛠 Built character movement in Unity using C#.</li>
-                        <li>🎨 Created 3D assets and rigging in Blender.</li>
-                        <li>💡 Implemented real-time lighting for improved aesthetics.</li>
-                    </ul>
-                    <img src="images/development_screenshot.jpg" alt="Development Screenshot" class="image fit">
-                </section>
+            <div class="image" data-position="center">
+                <img src="images/firesafe/trello.png" alt="Trello working environment and planning">
+            </div>
+            
+            <section>
+                <h3>Game Flow & Levels</h3>
+                <p>The simulation was designed for unsupervised use, requiring intuitive onboarding. Three scenes were created:</p>
+                <ul>
+                    <li><strong>Entry Scene:</strong> Users input their information.</li>
+                    <li><strong>Tutorial Scene:</strong> Training on VR locomotion and extinguisher usage.</li>
+                    <li><strong>Demo Scene:</strong> A fire scenario in a hotel lobby requiring players to locate and extinguish a fire.</li>
+                </ul>
+            </section>
 
-                <!-- Section 3: Challenges & Solutions -->
-                <section>
-                    <h2>3. Challenges & Solutions</h2>
-                    <p>
-                        One of the major challenges was optimizing performance for real-time rendering. To overcome this:
-                    </p>
-                    <blockquote>
-                        "I used LOD (Level of Detail) models and texture baking to reduce draw calls, improving FPS by 30%."
-                    </blockquote>
-                    <img src="images/optimization.jpg" alt="Optimization Process" class="image fit">
-                </section>
+            <div class="image" data-position="center">
+                <img src="images/firesafe/model_shot1.png" alt="Concept Art">
+                <img src="images/firesafe/model_shot3.png" alt="Concept Art">
+                <img src="images/firesafe/model_shot5.png" alt="Concept Art">
+            </div>
+            
+            <section>
+                <h2>Testing, Quality Control, & Launch</h2>
+                <h3>Usability Challenges & Iterations</h3>
+                <p>Early testing revealed that onboarding required refinement:</p>
+                <ul>
+                    <li>Added visual indicators for navigation.</li>
+                    <li>Refined extinguisher mechanics based on feedback.</li>
+                    <li>Enhanced smoke effects for realism.</li>
+                </ul>
+            </section>
+            
+            <div class="image" data-position="center">
+                <img src="images/firesafe/ConceptArt.png" alt="Concept Art">
+                <img src="images/firesafe/ConceptArt.png" alt="Concept Art">
+            </div>
 
-                <!-- Conclusion -->
-                <section>
-                    <h2>Conclusion & Results</h2>
-                    <p>
-                        After months of work, <strong>[Project Name]</strong> was successfully launched. The game/animation received positive feedback for its
-                        [e.g., visuals, mechanics, storytelling]. Below is a demo video showcasing the final product:
-                    </p>
-                    <video controls class="video fit">
-                        <source src="videos/final_demo.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </section>
-
-                <!-- Call to Action -->
-                <footer>
-                    <p>Want to see more? Check out the full project repository below:</p>
-                    <ul class="actions special">
-                        <li><a href="https://github.com/yourrepo" class="button">View on GitHub</a></li>
-                    </ul>
-                </footer>
-
-            </article>
-
-
-        <!-- Footer -->
-        <footer id="footer">
-            <p>© 2025 Filip Karlsson. All rights reserved.</p>
-        </footer>
-
+            <section>
+                <h2>Lessons Learned</h2>
+                <ul>
+                    <li><strong>Time Management:</strong> Extended timelines highlighted the need for better risk assessment.</li>
+                    <li><strong>Modular Development:</strong> Reusable systems streamlined later development.</li>
+                    <li><strong>User Experience:</strong> Balancing realism and accessibility required extensive playtesting.</li>
+                </ul>
+            </section>
+            
+            <section>
+                <h2>Conclusion</h2>
+                <p>Despite the extended development cycle, the VR fire safety simulation successfully delivered an engaging and informative experience. Reflecting on this project has reinforced the importance of balancing technical complexity with user accessibility in VR development.</p>
+            </section>
+        </article>
     </div>
-
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-
 </body>
 </html>
