@@ -1792,7 +1792,7 @@ input, select, textarea {
 	}
 
 		header.major h2 + p {
-			color: rgba(200, 200, 200, 0.2);
+			color: rgb(16, 16, 16);
 			font-size: 1.75em;
 			font-weight: 700;
 			margin-top: -0.75em;
@@ -1805,7 +1805,7 @@ input, select, textarea {
 	}
 
 	label {
-		color: rgba(200, 200, 200, 0.2);
+		color: rgb(16, 16, 16);
 		display: block;
 		font-size: 0.9em;
 		font-weight: 700;
@@ -1864,7 +1864,7 @@ input, select, textarea {
 	}
 
 		select option {
-			color: rgba(200, 200, 200, 0.2);
+			color: rgb(16, 16, 16);
 			background: #fff;
 		}
 
@@ -2478,7 +2478,7 @@ input, select, textarea {
 		}
 
 		table th {
-			color: rgba(200, 200, 200, 0.2);
+			color: rgb(16, 16, 16);
 			font-size: 0.9em;
 			font-weight: 700;
 			padding: 0 0.75em 0.75em 0.75em;
